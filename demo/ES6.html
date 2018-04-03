@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>ES6Demo演示</title>
+  <meta charset="UTF-8">
+  <title>ES6Demo演示</title>
   <style>
-    .log{
+    .log {
       background-color: black;
       color: white;
       padding: 10px 20px;
@@ -12,11 +12,10 @@
   </style>
 </head>
 <body>
-  <h2>ES6Demo演示</h2>
-  <div id="log" class="log"></div>
-  <script>
-
-    var str = `
+<h2>ES6Demo演示</h2>
+<div id="log" class="log"></div>
+<script>
+  var str = `
     console.log("a"+a);
     var a = 1;
     console.log("b"+b);
@@ -78,32 +77,31 @@
 
     console.log(newArr1);
 
-    `;
-    printLog(str);
+    `
+  printLog(str)
 
-    //数组的解构
-    var [a,b] = [3,8,10];//数组的分解
+  //数组的解构
+  var [a, b] = [3, 8, 10]//数组的分解
 
-    var [x,y,z] = "Vue";//字符串的分解
+  var [x, y, z] = 'Vue'//字符串的分解
 
-    console.log(`x:${x},y:${y},z:${z}`);
+  console.log(`x:${x},y:${y},z:${z}`)
 
-    var {n,m} = {m:10,n:20};//对象的解构,对key进行拆分
+  var {n, m} = {m: 10, n: 20}//对象的解构,对key进行拆分
 
-    console.log(`m:${m},n:${n}`);
+  console.log(`m:${m},n:${n}`)
 
+  function sum ([x, y]) {
+    return x + y
+  }
 
-    function sum([x,y]){
-      return x+y;
-    }
+  var total = sum([2, 8])
 
-    var total = sum([2,8]);
+  console.log(`total:${total}`)
 
-    console.log(`total:${total}`);
-
-    function printLog(str){
-      document.getElementById("log").innerText = str;
-    }
-  </script>
+  function printLog (str) {
+    document.getElementById('log').innerText = str
+  }
+</script>
 </body>
 </html>

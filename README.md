@@ -54,3 +54,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
 ## 5-1
 ### es6 介绍
+
+
+## 5-2
+### es6语法
