@@ -58,3 +58,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
 ## 5-2
 ### es6语法
+
+
+## 5-3
+### promise
