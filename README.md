@@ -47,5 +47,10 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 ### 命名路由和命名视图
 
 
-## 6-1
-### 
+## 4-1 ?
+### vue-resource (请求API)
+### 前局拦截器
+
+
+## 5-1
+### es6 介绍
