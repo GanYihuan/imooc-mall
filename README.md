@@ -31,5 +31,13 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 ### vue路由介绍
 
 
+## 2-7
+### vue动态路由
+
+
+## 2-8
+### 嵌套路由
+
+
 ## 6-1
 ### 
