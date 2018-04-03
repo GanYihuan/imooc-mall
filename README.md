@@ -22,5 +22,9 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 # imooc-mall
 
 
+## 2-3, 2-4
+### 项目目录详细讲解
+
+
 ## 6-1
 ### 
