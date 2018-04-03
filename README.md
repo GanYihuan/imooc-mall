@@ -66,3 +66,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
 ## 5-4
 ### es6模块化开发讲解 import
+
+
+## 5-5
+### AMD、CMD、CommonJS和ES6差异
