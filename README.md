@@ -27,20 +27,24 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 ### vue基础语法
 
 
-## 2-6
+## 3-1
 ### vue路由介绍
 
 
-## 2-7
+## 3-2
 ### vue动态路由
 
 
-## 2-8
+## 3-3
 ### 嵌套路由
 
 
-## 2-9
+## 3-4
 ### 编程式路由
+
+
+## 3-5
+### 命名路由和命名视图
 
 
 ## 6-1
