@@ -39,5 +39,9 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 ### 嵌套路由
 
 
+## 2-9
+### 编程式路由
+
+
 ## 6-1
 ### 
