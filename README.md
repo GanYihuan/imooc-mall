@@ -1,6 +1,4 @@
-# y
-
-> y
+# imooc-mall
 
 ## Build Setup
 
@@ -19,7 +17,6 @@ npm run build --report
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
-# imooc-mall
 
 
 ## 2-3, 2-4
@@ -28,6 +25,10 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
 ## 2-5
 ### vue基础语法
+
+
+## 2-6
+### vue路由介绍
 
 
 ## 6-1
