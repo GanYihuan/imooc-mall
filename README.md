@@ -62,3 +62,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
 ## 5-3
 ### promise
+
+
+## 5-4
+### es6模块化开发讲解 import
