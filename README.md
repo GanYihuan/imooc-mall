@@ -54,6 +54,10 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 ### vue-resource
 
 
+## 4-3
+### axios
+
+
 ## 5-1
 ### es6 介绍
 
