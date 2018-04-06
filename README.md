@@ -50,9 +50,8 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 ### 命名路由和命名视图
 
 
-## 4-1 ?
-### vue-resource (请求API)
-### 前局拦截器
+## 4-1
+### vue-resource
 
 
 ## 5-1
