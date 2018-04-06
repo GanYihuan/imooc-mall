@@ -4,6 +4,10 @@
       <!-- 获取动态路由参数 -->
       <!-- <span>{{$route.params.goodsId}}</span> -->
       <!-- <span>{{$route.params.name}}</span> -->
+      <!-- 嵌套路由 -->
+      <!-- <router-link to="/goods/title">title</router-link> -->
+      <!-- <router-link to="/goods/image">image</router-link> -->
+      <!-- <div><router-view></router-view></div> -->
       <symbol id="icon-cart" viewBox="0 0 38 32">
         <title>cart</title>
         <path class="path1"
