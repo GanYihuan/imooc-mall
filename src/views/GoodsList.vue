@@ -1,6 +1,9 @@
 <template>
   <div>
     <header class="header">
+      <!-- 获取动态路由参数 -->
+      <!-- <span>{{$route.params.goodsId}}</span> -->
+      <!-- <span>{{$route.params.name}}</span> -->
       <symbol id="icon-cart" viewBox="0 0 38 32">
         <title>cart</title>
         <path class="path1"

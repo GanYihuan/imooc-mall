@@ -70,3 +70,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
 ## 5-5
 ### AMD、CMD、CommonJS和ES6差异
+
+
+## 6-1
+### 组件拆分
