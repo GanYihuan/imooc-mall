@@ -46,6 +46,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
 
 ## 3-5
+### (GoodsList.vue)
 ### 命名路由和命名视图
 
 

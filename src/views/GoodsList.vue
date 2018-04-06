@@ -10,6 +10,8 @@
       <!-- <div><router-view></router-view></div> -->
       <!-- 编程式路由 -->
       <!-- <button @click="jump">jump to cart</button> -->
+      <!-- 命名路由 -->
+      <!-- <router-link v-bind:to="{name: 'cart', params: {cartId: 123}">image</router-link> -->
       <symbol id="icon-cart" viewBox="0 0 38 32">
         <title>cart</title>
         <path class="path1"

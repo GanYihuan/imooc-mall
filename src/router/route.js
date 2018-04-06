@@ -12,6 +12,14 @@ export default new Router({
   // mode: 'history'
   routes: [
     {
+      // 命名视图
+      // path: '/',
+      // name: 'GoodsList',
+      // components: {
+      //  default: GoodsList,
+      //  title: Title,
+      //  img: Image
+      // }
       // 动态路由
       // path: '/goods/:goodsId/user/:name',
       path: '/',
@@ -35,8 +43,8 @@ export default new Router({
       // ]
     },
     {
-      path: '/',
-      name: 'Cart',
+      path: '/cart/:cartId',
+      name: 'cart',
       component: Cart
     }
   ]
