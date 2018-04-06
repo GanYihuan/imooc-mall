@@ -21,6 +21,7 @@
 
   function sum2 (...m) {
     let total = 0
+    // es6: of
     for (let i of m) {
       total += i
     }
@@ -50,8 +51,9 @@
 
   // 结构赋值
   // var [x,y] = [4,8];
-  var [x, ...y] = [4, 8, 10, 30]
-  let [a, b, c] = 'ES6'
+  var [x, ...y] = [4, 8, 10, 30] // x = 4, y = 8, 10, 30
+  let [a, b, c] = 'ES6' // a = e, b = s, c = 6
+
   // 拆解了xy
   let xy = [...'ES6']
 </script>
