@@ -67,14 +67,18 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
 
 ## 5-3
-### promise
+### 宽展参数 ...
 
 
 ## 5-4
-### es6模块化开发讲解 import
+### promise
 
 
 ## 5-5
+### es6模块化开发讲解import
+
+
+## 5-6
 ### AMD、CMD、CommonJS和ES6差异
 
 
