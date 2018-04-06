@@ -8,6 +8,8 @@
       <!-- <router-link to="/goods/title">title</router-link> -->
       <!-- <router-link to="/goods/image">image</router-link> -->
       <!-- <div><router-view></router-view></div> -->
+      <!-- 编程式路由 -->
+      <!-- <button @click="jump">jump to cart</button> -->
       <symbol id="icon-cart" viewBox="0 0 38 32">
         <title>cart</title>
         <path class="path1"
@@ -176,6 +178,15 @@
   export default {
     data () {
       return {}
+    },
+    methods: {
+      jump () {
+        // 编程式路由
+        // this.$router.push('/cart')
+        this.$router.push({path: '/cart?goodsId=123'})
+        // 后退操作
+        // this.$router.go(-2)
+      }
     }
   }
 </script>

@@ -36,10 +36,12 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
 
 ## 3-3
+### (GoodsList.vue)
 ### 嵌套路由
 
 
 ## 3-4
+### (GoodsList.vue)
 ### 编程式路由
 
 

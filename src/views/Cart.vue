@@ -1,6 +1,8 @@
 <template>
   <div>
     <header class="header">
+      <!-- 接受编程式路由路由传递的参数 -->
+      <!-- <span>{{$router.query.goodsId}}</span> -->
       <symbol id="icon-cart" viewBox="0 0 38 32">
         <title>cart</title>
         <path class="path1"
