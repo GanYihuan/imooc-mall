@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <Counter :num="num" @incre="increment" @decre="decrement"></Counter>
+    <Counter v-bind:num="num" v-on:incre="increment" v-on:decre="decrement"></Counter>
     <p>parent:{{num}}</p>
   </div>
 </template>
