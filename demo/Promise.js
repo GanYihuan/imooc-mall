@@ -1,6 +1,6 @@
-let checkLogin = function () {
-  return new Promise(function (resolve, reject) {
-    let flag = document.cookie.indexOf('userId') > -1 ? true : false
+let checkLogin = () => {
+  return new Promise((resolve, reject) => {
+    let flag = document.cookie.indexOf('userId') > -1
     if (flag === true) {
       // 成功回调
       resolve({
@@ -39,6 +39,8 @@ checkLogin()
   })
 
 // Promise.all 同时调用多个接口和请求
-Promise.all([checkLogin(), getUserInfo()]).then(([res1, res2]) => {
-  console.log(`result1:${res1.result},result2:${res2.userId}`)
-})
+Promise
+  .all([checkLogin(), getUserInfo()])
+  .then(([res1, res2]) => {
+    console.log(`result1:${res1.result},result2:${res2.userId}`)
+  })
