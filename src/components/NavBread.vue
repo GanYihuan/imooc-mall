@@ -4,6 +4,8 @@
       <nav class="">
         <a href="/">Home</a>
         <slot></slot>
+        <!-- slot根据名字匹配 -->
+        <!-- <slot name="bread"></slot> -->
       </nav>
     </div>
   </section>
