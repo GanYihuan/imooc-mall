@@ -109,7 +109,14 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
 
 ## 7-4
-### express 框架搭建 ?
+### express 框架创建和生成
+```
+express server
+```
+### open in browser
+```
+http://localhost:3000
+``` 
 
 
 ## 8-2
@@ -134,7 +141,7 @@ mongoimport -d db_demo -c goods --file /Users/ganyihuan/Documents/Code/Web/Vue/i
 
 
 ## 9-1
-### 启动server
+### 启动调试node
 ```
 node server/bin/www
 ```
