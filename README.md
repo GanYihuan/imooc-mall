@@ -85,3 +85,8 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 ## 6-1
 ### 组件拆分
 ### (NavBread.vue) (NavHeader.vue) (NavFooter.vue)
+
+
+## 6-2
+### 模拟mock数据
+### 后端获取静态json数据渲染到界面
