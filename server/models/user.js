@@ -1,5 +1,5 @@
 let mongoose = require('mongoose')
-
+// 模型
 let userSchema = new mongoose.Schema({
   'userId': String,
   'userName': String,

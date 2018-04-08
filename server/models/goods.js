@@ -1,6 +1,6 @@
 let mongoose = require('mongoose')
+// 模型
 let Schema = mongoose.Schema
-
 let produtSchema = new Schema({
   'productId': {type: String},
   'productName': String,

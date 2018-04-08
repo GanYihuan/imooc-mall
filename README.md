@@ -131,3 +131,10 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 mongoimport -d db_demo -c users --file /Users/ganyihuan/Documents/Code/Web/Vue/imooc-mall/resource/dumall-users
 mongoimport -d db_demo -c goods --file /Users/ganyihuan/Documents/Code/Web/Vue/imooc-mall/resource/dumall-goods
 ```
+
+
+## 9-1
+### 启动server
+```
+node server/bin/www
+```
