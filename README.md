@@ -96,5 +96,9 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 ### 图片懒加载
 
 
-## 6-4
+## 7-1
 ### 安装linux
+
+
+## 7-2
+### Node, 起一个 http server
