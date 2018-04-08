@@ -145,3 +145,17 @@ mongoimport -d db_demo -c goods --file /Users/ganyihuan/Documents/Code/Web/Vue/i
 ```
 node server/bin/www
 ```
+### webstorm 配置启动node
+### pm2 配置启动node
+```
+安装:
+npm install pm2 -g
+启动:
+pm2 start server/bin/www
+停止全部:
+pm2 stop all
+查看项目:
+pm2 list
+查看日志:
+pm2 log
+```
