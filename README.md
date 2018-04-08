@@ -94,3 +94,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
 ## 6-3
 ### 图片懒加载
+
+
+## 6-4
+### 安装linux
