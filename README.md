@@ -109,6 +109,9 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
 
 ## 7-4
-### express 框架搭建 
+### express 框架搭建 ?
 
+
+## 8-2
+### linux平台下的搭建 ?
 
