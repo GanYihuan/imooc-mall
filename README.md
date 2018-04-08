@@ -122,3 +122,12 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
 ## 8-4
 ### mogodb基本语法 ?
+
+
+## 8-5
+### mongo表数据设计和插入
+### 导入数据表到mongodb里面,  另外起一个终端
+```
+mongoimport -d db_demo -c users --file /Users/ganyihuan/Documents/Code/Web/Vue/imooc-mall/resource/dumall-users
+mongoimport -d db_demo -c goods --file /Users/ganyihuan/Documents/Code/Web/Vue/imooc-mall/resource/dumall-goods
+```
