@@ -90,3 +90,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 ## 6-2
 ### 模拟mock数据
 ### 后端获取静态json数据渲染到界面
+
+
+## 6-3
+### 图片懒加载

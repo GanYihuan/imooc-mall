@@ -25,14 +25,16 @@
               <dt>Price:</dt>
               <dd>
                 <a
-                  href="javascript:void(0)"
+                  :class="{'cur':priceChecked==='all'}"
+                  @click="setPriceFilter('all')"
                 >
                   All
                 </a>
               </dd>
               <dd v-for="(item,index) in priceFilter" :key="index">
                 <a
-                  href="javascript:void(0)"
+                  :class="{'cur':priceChecked===index}"
+                  @click="setPriceFilter(index)"
                 >
                   {{item.startPrice}} - {{item.endPrice}}
                 </a>
@@ -46,14 +48,13 @@
                 <li v-for="(item, index) in goodsList" :key="index">
                   <div class="pic">
                     <!-- v-lazy: 里面是字符串 -->
-                    <a href="#"><img :src="'static/'+item.prodcutImg" alt=""></a>
+                    <a href="#"><img v-lazy="'static/'+item.prodcutImg" alt=""></a>
                   </div>
                   <div class="main">
                     <div class="name">{{item.productName}}</div>
-                    <div class="price">{{item.salePrice | currency('$')}}</div>
+                    <div class="price">{{item.prodcutPrice | currency('$')}}</div>
                     <div class="btn-area">
                       <a
-                        href="javascript:;"
                         class="btn btn--m"
                       >加入购物车</a>
                     </div>
@@ -65,6 +66,7 @@
         </div>
       </div>
     </div>
+    <div class="md-overlay" v-show="overLayFlag" @click.stop="closePop"></div>
     <nav-footer></nav-footer>
   </div>
 </template>
@@ -115,12 +117,35 @@
     },
     methods: {
       getGoodsList (flag) {
+        let param = {
+          page: this.page,
+          pageSize: this.pageSize,
+          sort: this.sortFlag ? 1 : -1,
+          priceLevel: this.priceChecked
+        }
+        this.loading = true
         axios
-          .get('/goods')
+          .get('/goods', {
+            params: param
+          })
           .then((response) => {
             let res = response.data
             this.goodsList = res.result
           })
+      },
+      setPriceFilter (index) {
+        this.priceChecked = index
+        this.page = 1
+        this.getGoodsList()
+      },
+      showFilterPop () {
+        this.filterBy = true
+        this.overLayFlag = true
+      },
+      closePop () {
+        this.filterBy = false
+        this.overLayFlag = false
+        this.mdShowCart = false
       }
     },
     components: {
