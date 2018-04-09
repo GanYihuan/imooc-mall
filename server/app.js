@@ -3,6 +3,7 @@ let path = require('path')
 // let favicon = require('serve-favicon')
 let logger = require('morgan')
 let cookieParser = require('cookie-parser')
+// post 请求进行转换
 let bodyParser = require('body-parser')
 
 let index = require('./routes/route')
