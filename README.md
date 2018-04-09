@@ -194,3 +194,9 @@ http://localhost:3000/goods?page=1&pageSize=8&sort=1&priceLevel=2
 
 ## 10-1
 ### 登录功能
+
+
+## 10-2
+### 登出功能
+### 避免重复启动node 
+supervisor
