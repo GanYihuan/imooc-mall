@@ -164,3 +164,11 @@ pm2 log
 ## 9-2
 ### 获取数据库里的数据
 ### (config/index.js) 代理
+
+
+## 9-3
+### 数据分类排序
+```
+http://localhost:3000/goods?page=1&pageSize=8&sort=1
+http://localhost:3000/goods?page=2&pageSize=8&sort=1
+```
