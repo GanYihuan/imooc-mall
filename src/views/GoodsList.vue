@@ -48,11 +48,11 @@
                 <li v-for="(item, index) in goodsList" :key="index">
                   <div class="pic">
                     <!-- v-lazy: 里面是字符串 -->
-                    <a href="#"><img v-lazy="'static/'+item.prodcutImg" alt=""></a>
+                    <a href="#"><img v-lazy="'static/'+item.productImage" alt=""></a>
                   </div>
                   <div class="main">
                     <div class="name">{{item.productName}}</div>
-                    <div class="price">{{item.prodcutPrice | currency('$')}}</div>
+                    <div class="price">{{item.salePrice | currency('$')}}</div>
                     <div class="btn-area">
                       <a
                         class="btn btn--m"
@@ -130,7 +130,7 @@
           })
           .then((response) => {
             let res = response.data
-            this.goodsList = res.result
+            this.goodsList = res.result.list
           })
       },
       setPriceFilter (index) {

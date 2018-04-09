@@ -10,17 +10,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const portfinder = require('portfinder')
 
-var goodsData = require('./../mock/goods.json')
 // 接口代理 绕过host和referer
 const express = require('express')
 // ajax
 const axios = require('axios')
 const app = express()
-var apiRoutes = express.Router()
-// apiRoutes.get('/goods', (req, res, next) => {
-//   res.json(goodsData)
-// })
-app.use('/api', apiRoutes)
+// let goodsData = require('./../mock/goods.json')
+// let apiRoutes = express.Router()
+// app.use('/api', apiRoutes)
 
 const HOST = process.env.HOST
 const PORT = process.env.PORT && Number(process.env.PORT)
@@ -34,11 +31,11 @@ const devWebpackConfig = merge(baseWebpackConfig, {
 
   // these devServer options should be customized in /config/index.js
   devServer: {
-    before (app) {
-      app.get('/goods', (req, res, next) => {
-        res.json(goodsData)
-      })
-    },
+    // before (app) {
+      // app.get('/goods', (req, res, next) => {
+      //   res.json(goodsData)
+      // })
+    // },
     clientLogLevel: 'warning',
     historyApiFallback: {
       rewrites: [
