@@ -10,8 +10,9 @@
       <div class="container">
         <div class="filter-nav">
           <span class="sortby">Sort by:</span>
-          <a href="javascript:void(0)" class="default cur">Default</a>
-          <a href="javascript:void(0)" class="price" :class="{'sort-up':sortFlag}" @click="sortGoods()">Price
+          <a class="default cur">Default</a>
+          <a class="price" :class="{'sort-up':sortFlag}" @click="sortGoods()">
+            Price
             <svg class="icon icon-arrow-short">
               <use xlink:href="#icon-arrow-short"></use>
             </svg>
@@ -61,6 +62,12 @@
                   </div>
                 </li>
               </ul>
+            </div>
+            <div class="view-more-normal"
+                 v-infinite-scroll="loadMore"
+                 infinite-scroll-disabled="busy"
+                 infinite-scroll-distance="20">
+              <img src="./../assets/loading-spinning-bubbles.svg" v-show="loading">
             </div>
           </div>
         </div>
@@ -120,8 +127,7 @@
         let param = {
           page: this.page,
           pageSize: this.pageSize,
-          sort: this.sortFlag ? 1 : -1,
-          priceLevel: this.priceChecked
+          sort: this.sortFlag ? 1 : -1
         }
         this.loading = true
         axios
@@ -130,8 +136,28 @@
           })
           .then((response) => {
             let res = response.data
-            this.goodsList = res.result.list
+            this.loading = false
+            if (res.status === '0') {
+              if (flag) {
+                this.goodsList = this.goodsList.concat(res.result.list)
+                if (res.result.count === 0) {
+                  this.busy = true
+                } else {
+                  this.busy = false
+                }
+              } else {
+                this.goodsList = res.result.list
+                this.busy = false
+              }
+            } else {
+              this.goodsList = []
+            }
           })
+      },
+      sortGoods () {
+        this.sortFlag = !this.sortFlag
+        this.page = 1
+        this.getGoodsList()
       },
       setPriceFilter (index) {
         this.priceChecked = index
@@ -146,6 +172,13 @@
         this.filterBy = false
         this.overLayFlag = false
         this.mdShowCart = false
+      },
+      loadMore () {
+        this.busy = true
+        setTimeout(() => {
+          this.page++
+          this.getGoodsList(true)
+        }, 500)
       }
     },
     components: {

@@ -4,6 +4,7 @@ import router from './router/route'
 // import axios from 'axios'
 import Vuex from 'vuex'
 import VueLazyload from 'vue-lazyload'
+// 向下滑动自动加载数据
 import infiniteScroll from 'vue-infinite-scroll'
 import { currency } from './util/currency'
 

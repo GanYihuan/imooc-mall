@@ -172,3 +172,8 @@ pm2 log
 http://localhost:3000/goods?page=1&pageSize=8&sort=1
 http://localhost:3000/goods?page=2&pageSize=8&sort=1
 ```
+
+
+## 9-4
+### 价格升序降序
+### 延时加载
