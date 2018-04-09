@@ -168,6 +168,7 @@ pm2 log
 
 ## 9-3
 ### 数据分类排序
+### 浏览展示mongodb 数据
 ```
 http://localhost:3000/goods?page=1&pageSize=8&sort=1
 http://localhost:3000/goods?page=2&pageSize=8&sort=1
@@ -177,3 +178,11 @@ http://localhost:3000/goods?page=2&pageSize=8&sort=1
 ## 9-4
 ### 价格升序降序
 ### 延时加载
+
+
+## 9-5
+### 产品分类展示
+### 浏览展示mongodb 数据, 增加了priceLevel值
+```
+http://localhost:3000/goods?page=1&pageSize=8&sort=1&priceLevel=2
+```

@@ -127,7 +127,8 @@
         let param = {
           page: this.page,
           pageSize: this.pageSize,
-          sort: this.sortFlag ? 1 : -1
+          sort: this.sortFlag ? 1 : -1,
+          priceLevel: this.priceChecked
         }
         this.loading = true
         axios
