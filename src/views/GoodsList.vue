@@ -57,6 +57,7 @@
                     <div class="btn-area">
                       <a
                         class="btn btn--m"
+                        @click="addCart(item.productId)"
                       >加入购物车</a>
                     </div>
                   </div>
@@ -180,6 +181,20 @@
           this.page++
           this.getGoodsList(true)
         }, 500)
+      },
+      addCart (productId) {
+        axios
+          .post('/goods/addCart', {
+            productId: productId
+          })
+          .then((response) => {
+            let res = response.data
+            if (res.status === 0) {
+              alert('add success!')
+            } else {
+              alert('msg:' + res.msg)
+            }
+          })
       }
     },
     components: {
