@@ -133,7 +133,7 @@
         }
         this.loading = true
         axios
-          .get('/goods', {
+          .get('/goods/list', {
             params: param
           })
           .then((response) => {

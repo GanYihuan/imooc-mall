@@ -5,7 +5,7 @@ let logger = require('morgan')
 let cookieParser = require('cookie-parser')
 // post 请求进行转换
 let bodyParser = require('body-parser')
-
+let ejs = require('ejs')
 let index = require('./routes/route')
 let users = require('./routes/users')
 let goods = require('./routes/goods')
@@ -14,7 +14,8 @@ let app = express()
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'))
-app.set('view engine', 'jade')
+app.engine('.html', ejs.__express)
+app.set('view engine', 'html')
 
 // uncomment after placing your favicon in /public
 // app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -23,6 +24,30 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
+
+// 登录拦截
+app.use(function (req, res, next) {
+  // 取cookies, 已经登录了
+  if (req.cookies.userId) {
+    next()
+  } else {
+    console.log('url:' + req.originalUrl)
+    // 设置白名单
+    if (
+      req.originalUrl === '/users/login' ||
+      req.originalUrl === '/users/logout' ||
+      req.originalUrl.indexOf('/goods/list') > -1
+    ) {
+      next()
+    } else {
+      res.json({
+        status: '10001',
+        msg: '当前未登录',
+        result: ''
+      })
+    }
+  }
+})
 
 app.use('/', index)
 app.use('/users', users)
