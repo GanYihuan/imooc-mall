@@ -40,7 +40,7 @@
           <a class="navbar-link" @click="loginModalFlag=true" v-if="!nickName">Login</a>
           <a class="navbar-link" @click="logOut" v-else>Logout</a>
           <div class="navbar-cart-container">
-            <span class="navbar-cart-count" v-text="cartCount" v-if="cartCount"></span>
+            <!--<span class="navbar-cart-count" v-text="cartCount" v-if="cartCount"></span>-->
             <a class="navbar-link navbar-cart-link" href="/#/cart">
               <svg class="navbar-cart-logo">
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-cart"></use>
@@ -88,7 +88,7 @@
 <script>
   import './../assets/css/login.css'
   import axios from 'axios'
-  import { mapState } from 'vuex'
+  //  import { mapState } from 'vuex'
 
   export default {
     data () {
@@ -96,32 +96,53 @@
         userName: 'admin',
         userPwd: '123456',
         errorTip: false,
-        loginModalFlag: false
+        loginModalFlag: false,
+        nickName: ''
       }
     },
-    computed: {
-      ...mapState(['nickName', 'cartCount'])
+//    computed: {
+//      ...mapState(['nickName', 'cartCount'])
+//    },
+    mounted () {
+      this.checkLogin()
     },
     methods: {
+      checkLogin () {
+        axios
+          .get('/users/checkLogin')
+          .then((response) => {
+            let res = response.data
+            // let path = this.$route.pathname
+            if (res.status === '0') {
+              // this.nickName = res.result
+              // this.$store.commit('updateUserInfo', res.result)
+              // this.loginModalFlag = false
+              this.nickName = res.result
+            }
+          })
+      },
       login () {
         if (!this.userName || !this.userPwd) {
           this.errorTip = true
           return
         }
-        axios.post('/users/login', {
-          userName: this.userName,
-          userPwd: this.userPwd
-        }).then((response) => {
-          let res = response.data
-          if (res.status === '0') {
-            this.errorTip = false
-            this.loginModalFlag = false
-            this.$store.commit('updateUserInfo', res.result.userName)
-            this.getCartCount()
-          } else {
-            this.errorTip = true
-          }
-        })
+        axios
+          .post('/users/login', {
+            userName: this.userName,
+            userPwd: this.userPwd
+          })
+          .then((response) => {
+            let res = response.data
+            if (res.status === '0') {
+              this.errorTip = false
+              this.loginModalFlag = false
+              // this.$store.commit('updateUserInfo', res.result.userName)
+              // this.getCartCount()
+              this.nickName = res.result.nickName
+            } else {
+              this.errorTip = true
+            }
+          })
       },
       logOut () {
         axios
@@ -129,8 +150,8 @@
           .then((response) => {
             let res = response.data
             if (res.status === '0') {
-              // this.nickName = ''
-              this.$store.commit('updateUserInfo', res.result.userName)
+              this.nickName = ''
+              // this.$store.commit('updateUserInfo', res.result.userName)
             }
           })
       }

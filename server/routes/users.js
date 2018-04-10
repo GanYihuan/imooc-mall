@@ -33,6 +33,7 @@ router.post('/login', function (req, res, next) {
           path: '/',
           maxAge: 1000 * 60 * 60
         })
+        // 使用session要按照插件: express-session
         // req.session.user = doc;
         res.json({
           status: '0',
@@ -57,6 +58,24 @@ router.post('/logout', function (req, res, next) {
     msg: '',
     result: ''
   })
+})
+
+// 用户信息校验
+router.get('/checkLogin', function (req, res, next) {
+  // 取cookies, 已经登录了
+  if (req.cookies.userId) {
+    res.json({
+      status: '0',
+      msg: '',
+      result: req.cookies.userName || ''
+    })
+  } else {
+    res.json({
+      status: '1',
+      msg: '未登录',
+      result: ''
+    })
+  }
 })
 
 module.exports = router
