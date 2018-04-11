@@ -112,7 +112,7 @@
           <div class="cart-foot-inner">
             <div class="cart-foot-l">
               <div class="item-all-check">
-                <a href="javascipt:;">
+                <a @click="toggleCheckAll">
                   <span class="checkbox-btn item-check-btn" :class="{'check':checkAllFlag}">
                       <svg class="icon icon-ok"><use xlink:href="#icon-ok"/></svg>
                   </span>
@@ -238,6 +238,22 @@
             let res = response.data
             if (res.status === '0') {
               this.$store.commit('updateCartCount', flag === 'add' ? 1 : -1)
+            }
+          })
+      },
+      toggleCheckAll () {
+        let flag = !this.checkAllFlag
+        this.cartList.forEach((item) => {
+          item.checked = flag ? '1' : '0'
+        })
+        axios
+          .post('/users/editCheckAll', {
+            checkAll: flag
+          })
+          .then((response) => {
+            let res = response.data
+            if (res.status === '0') {
+              console.log('update suc')
             }
           })
       },

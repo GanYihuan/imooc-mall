@@ -1,3 +1,4 @@
+// github copy, 尤雨溪 vuex example
 const digitsRE = /(\d{3})(?=\d)/g
 
 export function currency (value, currency, decimals) {
