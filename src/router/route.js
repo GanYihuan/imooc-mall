@@ -43,8 +43,8 @@ export default new Router({
       // ]
     },
     {
-      path: '/cart/:cartId',
-      name: 'cart',
+      path: '/cart',
+      name: 'Cart',
       component: Cart
     }
   ]

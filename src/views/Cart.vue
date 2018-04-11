@@ -202,9 +202,39 @@
 </template>
 
 <script>
+  import NavHeader from '@/components/NavHeader'
+  import NavFooter from '@/components/NavFooter'
+  import NavBread from '@/components/NavBread'
+  import Modal from '@/components/Modal'
+  //  import { currency } from './../util/currency'
+  import axios from 'axios'
+
   export default {
     data () {
-      return {}
+      return {
+        cartList: [],
+        delItem: {},
+        modalConfirm: false
+      }
+    },
+    mounted () {
+      this.init()
+    },
+    methods: {
+      init () {
+        axios
+          .get('/users/cartList')
+          .then((response) => {
+            let res = response.data
+            this.cartList = res.result
+          })
+      }
+    },
+    components: {
+      NavHeader,
+      NavFooter,
+      NavBread,
+      Modal
     }
   }
 </script>
