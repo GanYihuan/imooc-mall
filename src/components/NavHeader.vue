@@ -65,7 +65,8 @@
               <li class="regi_form_input">
                 <i class="icon IconPeople"></i>
                 <input type="text" tabindex="1" name="loginname" v-model="userName"
-                       class="regi_login_input regi_login_input_left" placeholder="User Name" data-type="loginname">
+                       class="regi_login_input regi_login_input_left" placeholder="User Name"
+                       data-type="loginname">
               </li>
               <li class="regi_form_input noMargin">
                 <i class="icon IconPwd"></i>
@@ -88,7 +89,7 @@
 <script>
   import './../assets/css/login.css'
   import axios from 'axios'
-  //  import { mapState } from 'vuex'
+  import { mapState } from 'vuex'
 
   export default {
     data () {
@@ -96,15 +97,15 @@
         userName: 'admin',
         userPwd: '123456',
         errorTip: false,
-        loginModalFlag: false,
-        nickName: ''
+//        nickName: ''
+        loginModalFlag: false
       }
     },
     computed: {
-//      ...mapState(['nickName', 'cartCount'])
-      cartCount () {
-        return this.$store.state.cartCount
-      }
+      ...mapState(['nickName', 'cartCount'])
+//      cartCount () {
+//        return this.$store.state.cartCount
+//      }
     },
     mounted () {
       this.checkLogin()
@@ -117,10 +118,9 @@
             let res = response.data
             // let path = this.$route.pathname
             if (res.status === '0') {
-              this.nickName = res.result
+//              this.nickName = res.result
               this.$store.commit('updateUserInfo', res.result)
               this.loginModalFlag = false
-              this.nickName = res.result
             }
           })
       },
@@ -134,7 +134,7 @@
             userName: this.userName,
             userPwd: this.userPwd
           })
-          .then(response => {
+          .then((response) => {
             let res = response.data
             if (res.status === '0') {
               this.errorTip = false

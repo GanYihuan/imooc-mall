@@ -12,6 +12,7 @@ router.get('/test', function (req, res, next) {
   res.send('test')
 })
 
+// 登录接口
 router.post('/login', function (req, res, next) {
   let param = {
     userName: req.body.userName,
@@ -98,6 +99,40 @@ router.get('/cartList', function (req, res, next) {
       }
     }
   })
+})
+
+// 购物车删除
+// $pull: 删除数据
+router.post('/cartDel', function (req, res, next) {
+  let userId = req.cookies.userId
+  let productId = req.body.productId
+  User.update(
+    {
+      userId: userId
+    },
+    {
+      $pull: {
+        cartList: {
+          productId: productId
+        }
+      }
+    },
+    function (err, doc) {
+      if (err) {
+        res.json({
+          status: '1',
+          msg: err.message,
+          result: ''
+        })
+      } else {
+        res.json({
+          status: '0',
+          msg: '',
+          result: 'suc'
+        })
+      }
+    }
+  )
 })
 
 module.exports = router
