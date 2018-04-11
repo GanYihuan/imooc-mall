@@ -60,7 +60,7 @@
               </ul>
             </div>
             <ul class="cart-item-list">
-              <li v-for="item in cartList" v-if="item.checked=='1'">
+              <li v-for="(item, index) in cartList" :key="index" v-if="item.checked=='1'">
                 <div class="cart-tab-1">
                   <div class="cart-item-pic">
                     <img v-lazy="'/static/'+item.productImage" :alt="item.productName">
@@ -175,6 +175,7 @@
           })
       },
       payMent () {
+        // 获取传过来的路由参数
         let addressId = this.$route.query.addressId
         axios
           .post('/users/payMent', {

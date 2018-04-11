@@ -1,6 +1,6 @@
 let express = require('express')
 let router = express.Router()
-// require('./../util/util')
+require('./../util/util')
 let User = require('./../models/user')
 
 /* GET users listing. */
