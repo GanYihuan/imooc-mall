@@ -282,3 +282,20 @@ supervisor
 
 ## 16-2
 ### webpack 介绍
+1. html-webpack-plugin
+> 生成界面
+2. extract-text-webpack-plugin
+> 把文件当成文本抽取出来
+3. UglifyJsPlugin/new webpack.optimize.UglifyJsPlugin()
+> 对js合并压缩
+4. CommonsChunkPlugin/new webpack.optimize.CommonsChunkPlugin()
+> 抽取公共模块
+5. clean-webpack-plugin
+> 打包之前删除文件
+6. copy-webpack-plugin
+> 文件的复制
+### 解析js文件, 并输出
+### 解析css文件, css-loader
+### 解析sass, less, scss, stylus文件 sass-loader/less-loader/node-sass
+### 解析图片(png, jpg, svg, gif) file-loader/url-loader
+### 给css添加前缀 postcss-loader/autoprefixer
