@@ -1,11 +1,12 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import GoodsList from '@/views/GoodsList'
-// import Title from '@/views/Title'
-// import Image from '@/views/Image'
 import Cart from '@/views/Cart'
 import Address from '@/views/Address'
 import OrderConfirm from '@/views/OrderConfirm'
+import OrderSuccess from '@/views/OrderSuccess'
+// import Title from '@/views/Title'
+// import Image from '@/views/Image'
 
 Vue.use(Router)
 
@@ -14,6 +15,9 @@ export default new Router({
   // mode: 'history'
   routes: [
     {
+      path: '/',
+      name: 'GoodsList',
+      component: GoodsList
       // 命名视图
       // path: '/',
       // name: 'GoodsList',
@@ -24,9 +28,6 @@ export default new Router({
       // }
       // 动态路由
       // path: '/goods/:goodsId/user/:name',
-      path: '/',
-      name: 'GoodsList',
-      component: GoodsList
       // 嵌套路由
       // ,
       // children: [
@@ -58,6 +59,11 @@ export default new Router({
       path: '/orderConfirm',
       name: 'OrderConfirm',
       component: OrderConfirm
+    },
+    {
+      path: '/orderSuccess',
+      name: 'OrderSuccess',
+      component: OrderSuccess
     }
   ]
 })
