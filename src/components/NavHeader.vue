@@ -118,9 +118,13 @@
             let res = response.data
             // let path = this.$route.pathname
             if (res.status === '0') {
-//              this.nickName = res.result
+              // this.nickName = res.result
               this.$store.commit('updateUserInfo', res.result)
               this.loginModalFlag = false
+            } else {
+              if (this.$route.path !== '/goods') {
+                this.$router.push('/goods')
+              }
             }
           })
       },
@@ -140,7 +144,7 @@
               this.errorTip = false
               this.loginModalFlag = false
               this.$store.commit('updateUserInfo', res.result.userName)
-              // this.getCartCount();
+              this.getCartCount()
             } else {
               this.errorTip = true
             }
@@ -155,6 +159,14 @@
               // this.nickName = ''
               this.$store.commit('updateUserInfo', res.result.userName)
             }
+          })
+      },
+      getCartCount () {
+        axios
+          .get('users/getCartCount')
+          .then((response) => {
+            let res = response.data
+            this.$store.commit('initCartCount', res.result)
           })
       }
     }
