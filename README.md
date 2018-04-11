@@ -280,7 +280,7 @@ supervisor
 ## fix bug
 
 
-## 16-2
+## 16-1
 ##### webpack 介绍
 1. html-webpack-plugin
 > 生成界面
@@ -299,3 +299,7 @@ supervisor
 ##### 解析sass, less, scss, stylus文件 sass-loader/less-loader/node-sass
 ##### 解析图片(png, jpg, svg, gif) file-loader/url-loader
 ##### 给css添加前缀 postcss-loader/autoprefixer
+
+
+## 16-2
+##### 编写自己的npm组件 vue-toast, 静态界面
