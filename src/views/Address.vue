@@ -74,7 +74,7 @@
                 <li
                   v-for="(item,index) in addressListFilter"
                   :key="index"
-                  :class="{'check':checkIndex==index}"
+                  :class="{'check':checkIndex===index}"
                   @click="checkIndex=index;selectedAddrId=item.addressId"
                 >
                   <dl>
