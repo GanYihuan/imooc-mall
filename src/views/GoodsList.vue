@@ -55,19 +55,18 @@
                     <div class="name">{{item.productName}}</div>
                     <div class="price">{{item.salePrice | currency('$')}}</div>
                     <div class="btn-area">
-                      <a
-                        class="btn btn--m"
-                        @click="addCart(item.productId)"
-                      >加入购物车</a>
+                      <a class="btn btn--m" @click="addCart(item.productId)">加入购物车</a>
                     </div>
                   </div>
                 </li>
               </ul>
             </div>
-            <div class="view-more-normal"
-                 v-infinite-scroll="loadMore"
-                 infinite-scroll-disabled="busy"
-                 infinite-scroll-distance="20">
+            <div
+              class="view-more-normal"
+              v-infinite-scroll="loadMore"
+              infinite-scroll-disabled="busy"
+              infinite-scroll-distance="20"
+            >
               <img src="./../assets/loading-spinning-bubbles.svg" v-show="loading">
             </div>
           </div>
@@ -144,7 +143,7 @@
       this.getGoodsList()
     },
     methods: {
-      getGoodsList (flag) {
+      getGoodsList: function (flag) {
         let param = {
           page: this.page,
           pageSize: this.pageSize,
@@ -162,11 +161,7 @@
             if (res.status === '0') {
               if (flag) {
                 this.goodsList = this.goodsList.concat(res.result.list)
-                if (res.result.count === 0) {
-                  this.busy = true
-                } else {
-                  this.busy = false
-                }
+                this.busy = res.result.count === 0
               } else {
                 this.goodsList = res.result.list
                 this.busy = false
@@ -187,15 +182,6 @@
         this.page = 1
         this.getGoodsList()
       },
-      showFilterPop () {
-        this.filterBy = true
-        this.overLayFlag = true
-      },
-      closePop () {
-        this.filterBy = false
-        this.overLayFlag = false
-        this.mdShowCart = false
-      },
       // 加载更多
       loadMore () {
         this.busy = true
@@ -205,13 +191,16 @@
         }, 500)
       },
       addCart (productId) {
+        console.log('fuck bug! 1')
         axios
           .post('/goods/addCart', {
             productId: productId
           })
           .then((response) => {
+            console.log('fuck bug! 2' + response.data.status)
             let res = response.data
-            if (res.status === 0) {
+            if (res.status === '0') {
+              console.log('fuck bug! 3')
               this.mdShowCart = true
               this.$store.commit('updateCartCount', 1)
             } else {
@@ -221,6 +210,15 @@
       },
       closeModal () {
         this.mdShow = false
+        this.mdShowCart = false
+      },
+      showFilterPop () {
+        this.filterBy = true
+        this.overLayFlag = true
+      },
+      closePop () {
+        this.filterBy = false
+        this.overLayFlag = false
         this.mdShowCart = false
       }
     },

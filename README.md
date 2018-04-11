@@ -275,3 +275,6 @@ supervisor
 
 ## 15-4
 ### vuex 使用
+
+
+## fix bug
