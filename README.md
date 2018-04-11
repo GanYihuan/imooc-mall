@@ -294,8 +294,8 @@ supervisor
 > 打包之前删除文件
 6. copy-webpack-plugin
 > 文件的复制
-### 解析js文件, 并输出
-### 解析css文件, css-loader
-### 解析sass, less, scss, stylus文件 sass-loader/less-loader/node-sass
-### 解析图片(png, jpg, svg, gif) file-loader/url-loader
-### 给css添加前缀 postcss-loader/autoprefixer
+`解析js文件, 并输出`
+`解析css文件, css-loader`
+`解析sass, less, scss, stylus文件 sass-loader/less-loader/node-sass`
+`解析图片(png, jpg, svg, gif) file-loader/url-loader`
+`给css添加前缀 postcss-loader/autoprefixer`
