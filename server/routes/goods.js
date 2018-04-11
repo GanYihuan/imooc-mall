@@ -148,7 +148,6 @@ router.post('/addCart', function (req, res, next) {
             }
           })
         }
-
       }
     }
   })

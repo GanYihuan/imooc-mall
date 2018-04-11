@@ -37,10 +37,10 @@
       <div class="navbar-right-container" style="display: flex;">
         <div class="navbar-menu-container">
           <span class="navbar-link" v-text="nickName" v-if="nickName"></span>
-          <a class="navbar-link" @click="loginModalFlag=true" v-if="!nickName">Login</a>
-          <a class="navbar-link" @click="logOut" v-else>Logout</a>
+          <a href="javascript:void(0)" class="navbar-link" @click="loginModalFlag=true" v-if="!nickName">Login</a>
+          <a href="javascript:void(0)" class="navbar-link" @click="logOut" v-else>Logout</a>
           <div class="navbar-cart-container">
-            <!--<span class="navbar-cart-count" v-text="cartCount" v-if="cartCount"></span>-->
+            <span class="navbar-cart-count" v-text="cartCount" v-if="cartCount"></span>
             <a class="navbar-link navbar-cart-link" href="/#/cart">
               <svg class="navbar-cart-logo">
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-cart"></use>
@@ -100,9 +100,12 @@
         nickName: ''
       }
     },
-//    computed: {
+    computed: {
 //      ...mapState(['nickName', 'cartCount'])
-//    },
+      cartCount () {
+        return this.$store.state.cartCount
+      }
+    },
     mounted () {
       this.checkLogin()
     },
@@ -114,9 +117,9 @@
             let res = response.data
             // let path = this.$route.pathname
             if (res.status === '0') {
-              // this.nickName = res.result
-              // this.$store.commit('updateUserInfo', res.result)
-              // this.loginModalFlag = false
+              this.nickName = res.result
+              this.$store.commit('updateUserInfo', res.result)
+              this.loginModalFlag = false
               this.nickName = res.result
             }
           })
@@ -131,14 +134,13 @@
             userName: this.userName,
             userPwd: this.userPwd
           })
-          .then((response) => {
+          .then(response => {
             let res = response.data
             if (res.status === '0') {
               this.errorTip = false
               this.loginModalFlag = false
-              // this.$store.commit('updateUserInfo', res.result.userName)
-              // this.getCartCount()
-              this.nickName = res.result.nickName
+              this.$store.commit('updateUserInfo', res.result.userName)
+              // this.getCartCount();
             } else {
               this.errorTip = true
             }
@@ -150,8 +152,8 @@
           .then((response) => {
             let res = response.data
             if (res.status === '0') {
-              this.nickName = ''
-              // this.$store.commit('updateUserInfo', res.result.userName)
+              // this.nickName = ''
+              this.$store.commit('updateUserInfo', res.result.userName)
             }
           })
       }
