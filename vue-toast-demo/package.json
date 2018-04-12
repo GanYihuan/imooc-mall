@@ -11,5 +11,8 @@
     "vue-toast"
   ],
   "author": "GanEhank",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "webpack": "^4.5.0"
+  }
 }
