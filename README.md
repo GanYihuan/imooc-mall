@@ -19,6 +19,16 @@ npm run build --report
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
 
+## 2-1: node enviroment
+##### node install
+```
+npm install -g npm
+cnpm install -g cnpm
+cnpm list
+cnpm install vue --save
+```
+
+
 ## 2-3, 2-4
 ##### 项目目录详细讲解
 
