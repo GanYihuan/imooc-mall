@@ -20,6 +20,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
 
 ## 2-1: node enviroment
+_✨_
 ##### node install
 ```
 npm install -g npm
@@ -29,8 +30,16 @@ cnpm install vue --save
 ```
 
 
-## 2-3, 2-4
-##### 项目目录详细讲解
+## 2-2: vue-cli SPA
+_✨_
+```
+npm install -g vue-cli
+vue init webpack demo
+```
+
+
+## 2-3, 2-4: vue webpack config
+_✨✨✨_
 
 
 ## 2-5

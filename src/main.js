@@ -7,7 +7,7 @@ import VueLazyload from 'vue-lazyload'
 // 向下滑动自动加载数据
 import infiniteScroll from 'vue-infinite-scroll'
 import { currency } from './util/currency'
-import store from './store/vuex'
+import store from './store/state'
 
 import './assets/css/base.css'
 import './assets/css/checkout.css'

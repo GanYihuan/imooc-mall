@@ -87,11 +87,10 @@
 </template>
 
 <script>
-  import { mapMutations } from 'vuex'
+  import { mapMutations, mapGetters } from 'vuex'
   import './../assets/css/login.css'
   import axios from 'axios'
   // import { mapState } from 'vuex'
-  import { mapGetters } from 'vuex'
 
   export default {
     data () {

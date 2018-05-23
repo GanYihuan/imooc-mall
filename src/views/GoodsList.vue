@@ -204,7 +204,7 @@
               console.log('fuck bug! 3')
               this.mdShowCart = true
               this.$store.commit('updateCartCount', 1)
-              this.setCartCount(flag === 'add' ? 1 : -1)
+              this.setCartCount(this.flag === 'add' ? 1 : -1)
               // this.setCartCount(1)
             } else {
               this.mdShow = true
@@ -226,7 +226,7 @@
       },
       // Call mutation, using the mutation-types constant.
       ...mapMutations({
-        setCartCount: 'SET_CART_COUNT',
+        setCartCount: 'SET_CART_COUNT'
       })
     },
     components: {
