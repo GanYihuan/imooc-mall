@@ -18,36 +18,30 @@ export default new Router({
       path: '/',
       name: 'GoodsList',
       component: GoodsList
-      // Named view
-      // path: '/',
-      // name: 'GoodsList',
-      // components: {
-      //  default: GoodsList,
-      //  title: Title,
-      //  img: Image
-      // }
       // Dynamic routing:
       // {
       //  path: '/goods/:goodsId/user/:name',
       //  name: 'GoodsList',
       //  component: GoodList
       // }
-      // 嵌套路由
-      // ,
-      // children: [
+      // Nested Routes:
+      // {
+      //  path: '/goods',
+      //  name: 'GoodsList',
+      //  component: GoodList,
+      //  children: [
       //   {
-      //     path: '/title',
-      //     name: 'Title',
+      //     path: 'title',
+      //     name: 'title',
       //     component: Title
-      //   }
-      // ],
-      // children: [
+      //   },
       //   {
-      //     path: '/image',
-      //     name: 'Image',
+      //     path: 'img',
+      //     name: 'img',
       //     component: Image
       //   }
-      // ]
+      //  ]
+      // }
     },
     {
       path: '/goods',
