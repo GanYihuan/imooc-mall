@@ -67,9 +67,8 @@ _✨✨✨_
 _✨✨✨_
 
 
-## 3-5
-##### (GoodsList.vue)
-##### 命名路由和命名视图
+## 3-5: Named routes and named views
+_✨✨✨_
 
 
 ## 4-1
