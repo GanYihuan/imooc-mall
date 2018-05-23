@@ -63,9 +63,8 @@ _✨✨✨_
 _✨✨✨_
 
 
-## 3-4
-##### (GoodsList.vue)
-##### 编程式路由
+## 3-4: Programmatic routing
+_✨✨✨_
 
 
 ## 3-5
