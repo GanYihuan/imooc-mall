@@ -55,8 +55,8 @@ _✨_
 3. can't remenber roll position
 
 
-## 3-2
-##### vue动态路由
+## 3-2: Dynamic routing
+_✨✨✨_
 
 
 ## 3-3

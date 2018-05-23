@@ -11,14 +11,14 @@ import OrderSuccess from '@/views/OrderSuccess'
 Vue.use(Router)
 
 export default new Router({
-  // 路由地址删除了#值
+  // The routing address deletes the # value.
   // mode: 'history'
   routes: [
     {
       path: '/',
       name: 'GoodsList',
       component: GoodsList
-      // 命名视图
+      // Named view
       // path: '/',
       // name: 'GoodsList',
       // components: {
@@ -26,8 +26,12 @@ export default new Router({
       //  title: Title,
       //  img: Image
       // }
-      // 动态路由
-      // path: '/goods/:goodsId/user/:name',
+      // Dynamic routing:
+      // {
+      //  path: '/goods/:goodsId/user/:name',
+      //  name: 'GoodsList',
+      //  component: GoodList
+      // }
       // 嵌套路由
       // ,
       // children: [
