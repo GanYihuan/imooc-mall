@@ -99,6 +99,7 @@
 </template>
 
 <script>
+  import { mapMutations } from 'vuex'
   import NavHeader from '@/components/NavHeader'
   import NavFooter from '@/components/NavFooter'
   import NavBread from '@/components/NavBread'
@@ -203,6 +204,8 @@
               console.log('fuck bug! 3')
               this.mdShowCart = true
               this.$store.commit('updateCartCount', 1)
+              this.setCartCount(flag === 'add' ? 1 : -1)
+              // this.setCartCount(1)
             } else {
               this.mdShow = true
             }
@@ -220,7 +223,11 @@
         this.filterBy = false
         this.overLayFlag = false
         this.mdShowCart = false
-      }
+      },
+      // Call mutation, using the mutation-types constant.
+      ...mapMutations({
+        setCartCount: 'SET_CART_COUNT',
+      })
     },
     components: {
       NavHeader,

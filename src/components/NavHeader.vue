@@ -87,9 +87,11 @@
 </template>
 
 <script>
+  import { mapMutations } from 'vuex'
   import './../assets/css/login.css'
   import axios from 'axios'
-  import { mapState } from 'vuex'
+  // import { mapState } from 'vuex'
+  import { mapGetters } from 'vuex'
 
   export default {
     data () {
@@ -102,10 +104,14 @@
       }
     },
     computed: {
-      ...mapState(['nickName', 'cartCount'])
-//      cartCount () {
-//        return this.$store.state.cartCount
-//      }
+      ...mapGetters([
+        'nickName',
+        'cartCount'
+      ])
+      // ...mapState(['nickName', 'cartCount'])
+      // cartCount () {
+      //  return this.$store.state.cartCount
+      // }
     },
     mounted () {
       this.checkLogin()
@@ -119,7 +125,8 @@
             // let path = this.$route.pathname
             if (res.status === '0') {
               // this.nickName = res.result
-              this.$store.commit('updateUserInfo', res.result)
+              // this.$store.commit('updateUserInfo', res.result)
+              this.setNickName(res.result)
               this.loginModalFlag = false
             } else {
               if (this.$route.path !== '/goods') {
@@ -143,7 +150,8 @@
             if (res.status === '0') {
               this.errorTip = false
               this.loginModalFlag = false
-              this.$store.commit('updateUserInfo', res.result.userName)
+              // this.$store.commit('updateUserInfo', res.result.userName)
+              this.setNickName(res.result.userName)
               this.getCartCount()
             } else {
               this.errorTip = true
@@ -157,7 +165,8 @@
             let res = response.data
             if (res.status === '0') {
               // this.nickName = ''
-              this.$store.commit('updateUserInfo', res.result.userName)
+              // this.$store.commit('updateUserInfo', res.result.userName)
+              this.setNickName(res.result.userName)
             }
           })
       },
@@ -166,10 +175,16 @@
           .get('users/getCartCount')
           .then((response) => {
             let res = response.data
-            this.$store.commit('initCartCount', res.result)
+            // this.$store.commit('initCartCount', res.result)
+            this.initCartCount(res.result.userName)
           })
       }
-    }
+    },
+    // Call mutation, using the mutation-types constant.
+    ...mapMutations({
+      setNickName: 'SET_NICKNAME',
+      initCartCount: 'INIT_CART_COUNT'
+    })
   }
 </script>
 

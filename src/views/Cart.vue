@@ -144,6 +144,7 @@
 </template>
 
 <script>
+  import { mapMutations } from 'vuex'
   import NavHeader from './../components/NavHeader'
   import NavFooter from './../components/NavFooter'
   import NavBread from './../components/NavBread'
@@ -213,6 +214,8 @@
               this.modalConfirm = false
               let delCount = this.delItem.productNum
               this.$store.commit('updateCartCount', -delCount)
+              this.setCartCount(-delCount)
+              // this.setcartCount(-delCount)
               this.init()
             }
           })
@@ -237,7 +240,8 @@
           .then((response) => {
             let res = response.data
             if (res.status === '0') {
-              this.$store.commit('updateCartCount', flag === 'add' ? 1 : -1)
+              // this.$store.commit('updateCartCount', flag === 'add' ? 1 : -1)
+              this.setCartCount(flag === 'add' ? 1 : -1)
             }
           })
       },
@@ -263,7 +267,13 @@
             path: '/address'
           })
         }
-      }
+      },
+      // Call mutation, using the mutation-types constant.
+      ...mapMutations({
+        setNickName: 'SET_NICKNAME',
+        setCartCount: 'SET_CART_COUNT',
+        initCartCount: 'INIT_CART_COUNT'
+      })
     },
     components: {
       NavHeader,

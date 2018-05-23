@@ -5,6 +5,9 @@ const mutations = {
     state.nickName = nickName
   },
   [types.SET_CART_COUNT] (state, cartCount) {
+    state.cartCount += cartCount
+  },
+  [types.INIT_CART_COUNT] (state, cartCount) {
     state.cartCount = cartCount
   }
 }
