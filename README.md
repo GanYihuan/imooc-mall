@@ -46,8 +46,13 @@ _✨✨✨✨_
 _✨✨✨_
 
 
-## 3-1
-##### vue路由介绍
+## 3-1: vue route introduce
+_✨_
+##### advantage: more fast
+##### disadvantages
+1. SEO bad, 
+2. use browser back, forward will request, 
+3. can't remenber roll position
 
 
 ## 3-2
