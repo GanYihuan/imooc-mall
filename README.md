@@ -39,11 +39,11 @@ vue init webpack demo
 
 
 ## 2-3, 2-4: vue webpack config
+_✨✨✨✨_
+
+
+## 2-5: vue basic grammar
 _✨✨✨_
-
-
-## 2-5
-##### vue基础语法
 
 
 ## 3-1
