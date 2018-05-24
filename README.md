@@ -71,12 +71,15 @@ _✨✨✨_
 _✨✨✨_
 
 
-## 4-1
-##### vue-resource
+## 4-1, 4-2: vue-resource
+_✨✨✨_
+```
+npm install vue-resource --save
+```
 
 
-## 4-3
-##### axios
+## 4-3: axios
+_✨✨✨_
 
 
 ## 5-1

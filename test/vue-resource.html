@@ -32,7 +32,7 @@
       })
     },
     http: {
-      root: 'http://localhost:63342/ImoocMall',
+      root: 'http://localhost:63342/imooc-mall',
       headers: {
         author: 'jackbean',
         Authorization: 'Basic YXBpOnBhc3N3b3Jk'
@@ -40,37 +40,42 @@
     },
     methods: {
       get: function () {
-        this.$http.get('package1.json', {
-          params: {
-            userId: '123'
-          },
-          headers: {
-            access_token: 'abcd'
-          },
-          before: function () {
-            console.log('before init.')
-          }
-        }).then(function (res) {
-          this.msg = res.data
-        }, function (error) {
-          console.log('error' + error)
-        }).catch(function (error) {
-          console.log('catch eroro' + error)
-        })
+        this.$http
+          .get('package1.json', {
+            params: {
+              userId: '123'
+            },
+            headers: {
+              access_token: 'abcd'
+            },
+            before: function () {
+              console.log('before init.')
+            }
+          })
+          .then(function (res) {
+            this.msg = res.data
+          }, function (error) {
+            console.log('error' + error)
+          })
+          .catch(function (error) {
+            console.log('catch eroro' + error)
+          })
       },
       post: function () {
-        this.$http.post('../package.json', {
-          userId: '123'
-        }, {
-          headers: {
-            access_token: 'abcd'
-          },
-          before: function () {
-            console.log('before init.')
-          }
-        }).then(function (res) {
-          this.msg = res.data
-        })
+        this.$http
+          .post('../package.json', {
+            userId: '123'
+          }, {
+            headers: {
+              access_token: 'abcd'
+            },
+            before: function () {
+              console.log('before init.')
+            }
+          })
+          .then(function (res) {
+            this.msg = res.data
+          })
       },
       http: function () {
         this.$http({
@@ -82,19 +87,22 @@
           headers: {
             token: '101'
           }
-        }).then(function (res) {
-          this.msg = res.data
         })
+          .then(function (res) {
+            this.msg = res.data
+          })
       },
       jsonp: function () {
-        this.$http.jsonp('http://www.imooc.com/course/ajaxskillcourse?cid=796', {
-          params: {
-            userId: 1001
-          },
-          uId: 'jack'
-        }).then(function (res) {
-          this.msg = res.data
-        })
+        this.$http
+          .jsonp('http://www.imooc.com/course/ajaxskillcourse?cid=796', {
+            params: {
+              userId: 1001
+            },
+            uId: 'jack'
+          })
+          .then(function (res) {
+            this.msg = res.data
+          })
       }
     }
   })
