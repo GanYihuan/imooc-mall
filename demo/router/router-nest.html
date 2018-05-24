@@ -14,25 +14,24 @@
   <router-link to="/admin">admin</router-link>
   <router-view></router-view>
 </div>
-
 <script>
   const home = {
-    template:'<div>我是主页<router-view></router-view></div>'
-  };
+    template: '<div>我是主页<router-view></router-view></div>'
+  }
   const admin = {
-    template:`<div>这是嵌套页面<router-view></router-view></div>`
-  };
+    template: `<div>这是嵌套页面<router-view></router-view></div>`
+  }
   const index = {
-    template:'<div>这是主页子路由页面</div>'
-  };
+    template: '<div>这是主页子路由页面</div>'
+  }
   const profile = {
-    template:`<div>这是用户信息子路由页面:</div>`
-  };
+    template: `<div>这是用户信息子路由页面:</div>`
+  }
   const routes = [
     {
       path: '/home',
-      component: home ,
-      children:[
+      component: home,
+      children: [
         {
           path: 'index',
           component: index
@@ -42,7 +41,7 @@
     {
       path: '/admin/:userId',
       component: admin,
-      children:[
+      children: [
         {
           path: 'profile',
           component: profile
@@ -51,13 +50,12 @@
     }
   ]
   var router = new VueRouter({
-    routes:routes
-  });
+    routes: routes
+  })
   new Vue({
-    el:"#app",
-    router:router
-
-  });
+    el: '#app',
+    router: router
+  })
 </script>
 </body>
 </html>

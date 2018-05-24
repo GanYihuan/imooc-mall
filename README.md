@@ -82,28 +82,24 @@ npm install vue-resource --save
 _✨✨✨_
 
 
-## 5-1: es6 introduce
-_✨_
-
-
-## 5-2: es6 grammar
+## 5-1: es6 introduce, grammar
 _✨✨✨_
 
 
-## 5-3
-##### 宽展参数 ...
+## 5-2: es6 deconstruction
+_✨✨✨_
 
 
-## 5-4
-##### promise
+## 5-3: promise
+_✨✨✨_
 
 
-## 5-5
-##### es6模块化开发讲解import
+## 5-4: Module development
+_✨✨✨_
 
 
-## 5-6
-##### AMD、CMD、CommonJS和ES6差异
+## 5-5: AMD、CMD、CommonJS and ES6 diff introduce
+_✨_
 
 
 ## 6-1

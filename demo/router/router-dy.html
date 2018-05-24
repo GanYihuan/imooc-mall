@@ -14,35 +14,33 @@
   <router-link to="/admin">admin</router-link>
   <router-view></router-view>
 </div>
-
 <script>
   const home = {
-    template:'<div>我是主页{{$route.params.id}}</div>'
-  };
+    template: '<div>我是主页{{$route.params.id}}</div>'
+  }
   const admin = {
-    template:'<div>我是管理页面,参数为:{{param1}}</div>',
+    template: '<div>我是管理页面,参数为:{{param1}}</div>',
     data: function () {
       return {
-        param1:'',
-        param2:''
+        param1: '',
+        param2: ''
       }
     },
     mounted: function () {
-      this.param1 = this.$route.params.userId;
+      this.param1 = this.$route.params.userId
     }
-  };
+  }
   const routes = [
-    { path: '/home/:id', component: home },
-    { path: '/admin/:userId/query', component: admin }
+    {path: '/home/:id', component: home},
+    {path: '/admin/:userId/query', component: admin}
   ]
   var router = new VueRouter({
-    routes:routes
-  });
+    routes: routes
+  })
   new Vue({
-    el:"#app",
-    router:router
-
-  });
+    el: '#app',
+    router: router
+  })
 </script>
 </body>
 </html>

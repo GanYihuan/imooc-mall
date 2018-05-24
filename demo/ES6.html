@@ -15,23 +15,23 @@
 <h2>ES6Demo演示</h2>
 <div id="log" class="log"></div>
 <script>
-  var str = `
+  let str = `
     console.log("a"+a);
-    var a = 1;
+    let a = 1;
     console.log("b"+b);
     let b = 2;
     function user(){
-      var a = 1;
+      let a = 1;
     }
 
     console.log("a"+a);
 
-    var a = 1;
+    let a = 1;
 
     //块级作用域
     {
       let a = 1;
-      var b = 2;
+      let b = 2;
     }
 
     console.log("b:"+b);
@@ -67,41 +67,61 @@
 
     console.log(sum(7));
 
-    var arr = [3,6,9];
+    let arr = [3,6,9];
 
-    var newArr = arr.map(function (item) {
+    let newArr = arr.map(function (item) {
       return item+2;
     })
 
-    var newArr1 = arr.map((item)=>item+2);
+    let newArr1 = arr.map((item)=>item+2);
 
     console.log(newArr1);
-
     `
   printLog(str)
 
-  //数组的解构
-  var [a, b] = [3, 8, 10]//数组的分解
+  // 数组的解构
+  let [a, b] = [3, 8, 10] // 数组的分解
+  let [x, ...y] = [1, 2, 3, 4] // x = 1, y = 2, 3, 4
+  let [x, y, z] = 'Vue' // 字符串的分解
+  console.log(`x:${x},y:${y},z:${z}`) // x = V, y = u, z = e
+  let xy = [...'ES6'] // ['E', 'S', '6']
+  console.log(...[4, 8]) // 4, 8
 
-  var [x, y, z] = 'Vue'//字符串的分解
-
-  console.log(`x:${x},y:${y},z:${z}`)
-
-  var {n, m} = {m: 10, n: 20}//对象的解构,对key进行拆分
-
+  // 对象的解构,对key进行拆分
+  let {n, m} = {m: 10, n: 20}
   console.log(`m:${m},n:${n}`)
+  let d = {x: 3, y: 8}
+  d.x // 3
+  d.y // 8
+  let {bar, foo} = {foo: 'aaa', bar: 'bbb'}
+  foo // "aaa"
+  bar // "bbb"
+  let {x, y = 5} = {x: 1}
+  // x = 1, y = 5
 
+  // function的解构
   function sum ([x, y]) {
     return x + y
   }
-
-  var total = sum([2, 8])
-
-  console.log(`total:${total}`)
-
-  function printLog (str) {
-    document.getElementById('log').innerText = str
+  let total = sum([2, 8])
+  console.log(`total:${total}`) // 10
+  // Uncertain parameter
+  let sum = (...values) => {
+    let sum = 0
+    for (let val of values) {
+      sum += val
+    }
+    return sum
   }
+  sum(2, 5, 3) // 10
+
+  // 合并数组
+  let arr1 = ['a', 'b']
+  let arr2 = ['c']
+  let arr3 = ['d', 'e']
+  arr1.concat(arr2, arr3)
+  // es6
+  let arrList = [...arr1, ...arr2, ...arr3]
 </script>
 </body>
 </html>

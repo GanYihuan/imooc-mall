@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Promise</title>
+</head>
+<body>
+<script>
+  function getUserId () {
+    return new Promise((resolve, reject) => {
+      let user = {
+        userId: '101'
+      }
+      resolve(user)
+    })
+  }
+
+  function checkLogin () {
+    return new Promise((resolve, reject) => {
+      let cookieFlag = document.cookie.indexOf('userId') > -1
+      if (cookieFlag = true) {
+        resolve({
+          status: 0,
+          result: true
+        })
+      } else {
+        reject('error')
+      }
+    })
+  }
+
+  checkLogin()
+    .then((res) => {
+      if (res.status === 0) {
+        console.log('login success')
+        return getUserId()
+      } else {
+        console.log('login fail')
+      }
+    })
+    .catch((error) => {
+      console.log('login error')
+    })
+    .then((res2) => {
+      console.log('userId:' + res2.userId)
+    })
+
+  Promise
+    .all([checkLogin(), getUserId()])
+    .then(([res1, res2]) => {
+      console.log('res1' + res1)
+      console.log('res2' + res2)
+    })
+</script>
+</body>
+</html>
