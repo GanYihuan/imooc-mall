@@ -7,8 +7,7 @@ let fs = require('fs')
 let server = http.createServer((req, res) => {
   // res.statusCode = 200;
   // res.setHeader("Content-Type","text/plain; charset=utf-8");
-
-  var pathname = url.parse(req.url).pathname
+  let pathname = url.parse(req.url).pathname
   console.log('file:' + pathname.substring(1))
   fs.readFile(pathname.substring(1), function (err, data) {
     if (err) {
@@ -23,7 +22,6 @@ let server = http.createServer((req, res) => {
     }
     res.end()
   })
-
 })
 
 server.listen(3000, '127.0.0.1', () => {
