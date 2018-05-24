@@ -82,12 +82,12 @@ npm install vue-resource --save
 _✨✨✨_
 
 
-## 5-1
-##### es6 介绍
+## 5-1: es6 introduce
+_✨_
 
 
-## 5-2
-##### es6语法
+## 5-2: es6 grammar
+_✨✨✨_
 
 
 ## 5-3
