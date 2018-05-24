@@ -15,9 +15,9 @@ const express = require('express')
 // ajax
 const axios = require('axios')
 const app = express()
-// let goodsData = require('./../mock/goods.json')
-// let apiRoutes = express.Router()
-// app.use('/api', apiRoutes)
+let apiRoutes = express.Router()
+let goodsData = require('./../mock/goods.json')
+app.use(apiRoutes)
 
 const HOST = process.env.HOST
 const PORT = process.env.PORT && Number(process.env.PORT)
@@ -31,11 +31,11 @@ const devWebpackConfig = merge(baseWebpackConfig, {
 
   // these devServer options should be customized in /config/index.js
   devServer: {
-    // before (app) {
-      // app.get('/goods', (req, res, next) => {
-      //   res.json(goodsData)
-      // })
-    // },
+    before (app) {
+      app.get('/goods', (req, res, next) => {
+        res.json(goodsData)
+      })
+    },
     clientLogLevel: 'warning',
     historyApiFallback: {
       rewrites: [

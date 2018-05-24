@@ -25,18 +25,12 @@
             <dl class="filter-price">
               <dt>Price:</dt>
               <dd>
-                <a
-                  :class="{'cur':priceChecked==='all'}"
-                  @click="setPriceFilter('all')"
-                >
+                <a :class="{'cur':priceChecked==='all'}" @click="setPriceFilter('all')">
                   All
                 </a>
               </dd>
               <dd v-for="(item,index) in priceFilter" :key="index">
-                <a
-                  :class="{'cur':priceChecked===index}"
-                  @click="setPriceFilter(index)"
-                >
+                <a :class="{'cur':priceChecked===index}" @click="setPriceFilter(index)">
                   {{item.startPrice}} - {{item.endPrice}}
                 </a>
               </dd>
@@ -142,7 +136,7 @@
       this.getGoodsList()
     },
     methods: {
-      getGoodsList: function (flag) {
+      getGoodsList (flag) {
         let param = {
           page: this.page,
           pageSize: this.pageSize,
@@ -200,6 +194,7 @@
               console.log('fuck bug! 3')
               this.mdShowCart = true
               this.$store.commit('updateCartCount', 1)
+              // ...mapMutations
               this.setCartCount(this.flag === 'add' ? 1 : -1)
               // this.setCartCount(1)
             } else {
