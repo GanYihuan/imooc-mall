@@ -1,9 +1,9 @@
-//module.exports  = {
+// module.exports = {
 //  userName:"Jack",
 //  sayHello: function () {
-//      return 'Hello';
+//    return 'Hello';
 //  }
-//}
+// }
 
 exports.userName = 'Tom'
 exports.sayHello = function () {

@@ -1,5 +1,4 @@
 let user = require('./User')
-
 console.log(`userName:${user.userName}`)
 console.log(`I'm ${user.userName},I say ${user.sayHello()}`)
 
@@ -12,9 +11,9 @@ let server = http.createServer((req, res) => {
   res.setHeader('Content-Type', 'text/plain; charset=utf-8')
   console.log('url:' + req.url) // demo.html?a=123
   console.log('parse:' + url.parse(req.url)) // [object]
-  console.log('inspect:' + util.inspect(url.parse(req.url)))
   // parse: 转换为对象
-  // inspect: 调试用
+  // inspect: 调试用, 对象转换为字符串输出
+  console.log('inspect:' + util.inspect(url.parse(req.url)))
   res.end(util.inspect(url.parse(req.url)))
 })
 
