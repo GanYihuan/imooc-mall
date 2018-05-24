@@ -74,9 +74,7 @@
       </div>
     </div>
     <modal :mdShow="mdShow" @close="closeModal">
-      <p slot="message">
-        请先登录,否则无法加入到购物车中!
-      </p>
+      <p slot="message">请先登录,否则无法加入到购物车中!</p>
       <div slot="btnGroup">
         <a class="btn btn--m" href="javascript:;" @click="mdShow = false">关闭</a>
       </div>
@@ -172,7 +170,6 @@
             }
           })
       },
-      // 排序
       sortGoods () {
         this.sortFlag = !this.sortFlag
         this.page = 1
@@ -183,7 +180,6 @@
         this.page = 1
         this.getGoodsList()
       },
-      // 加载更多
       loadMore () {
         this.busy = true
         setTimeout(() => {

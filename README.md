@@ -102,9 +102,8 @@ _✨✨✨_
 _✨_
 
 
-## 6-1
-##### 组件拆分
-##### (NavBread.vue) (NavHeader.vue) (NavFooter.vue)
+## 6-1: (NavBread.vue) (NavHeader.vue) (NavFooter.vue)
+_✨✨✨_
 
 
 ## 6-2

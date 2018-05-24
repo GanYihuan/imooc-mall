@@ -18,30 +18,6 @@ export default new Router({
       path: '/',
       name: 'GoodsList',
       component: GoodsList
-      // Dynamic routing:
-      // {
-      //  path: '/goods/:goodsId/user/:name',
-      //  name: 'GoodsList',
-      //  component: GoodList
-      // }
-      // Nested Routes:
-      // {
-      //  path: '/goods',
-      //  name: 'GoodsList',
-      //  component: GoodList,
-      //  children: [
-      //   {
-      //     path: 'title',
-      //     name: 'title',
-      //     component: Title
-      //   },
-      //   {
-      //     path: 'img',
-      //     name: 'img',
-      //     component: Image
-      //   }
-      //  ]
-      // }
     },
     {
       path: '/goods',
