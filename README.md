@@ -123,18 +123,33 @@ _✨✨✨✨_
 
 
 ## 7-3: node server
+_✨✨✨✨_ 
+
+
+## 7-4: express create
 _✨✨✨✨_
-
-
-## 7-4
-##### express 框架创建和生成
 ```
+npm install ejs --save
+npm install -g express-generator
+express --help
+express --version
 express server
 ```
-##### open in browser
+##### run server
 ```
-http://localhost:3000
+cd server
+node bin/www
 ``` 
+##### npm 如何全面升级package.json中的版本号
+```
+全局安装 npm install npm-check-updates -g
+
+检查depedencies中的最新版本 npm-check-updates 
+
+更新dependencies到最新版本 ncu -u 
+
+如果想更新全部depedencies到最新版本（包括当前指定版本范围满足最新版本号）ncu -a
+```
 
 
 ## 8-2
